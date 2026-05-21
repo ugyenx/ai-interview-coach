@@ -9,6 +9,8 @@ import InterviewSetupPage from './pages/InterviewSetupPage';
 import InterviewRoomPage from './pages/InterviewRoomPage';
 import EvaluationPage from './pages/EvaluationPage';
 import SettingsPage from './pages/SettingsPage';
+import ResumeAnalyzerPage from './pages/ResumeAnalyzerPage';
+import CodingArenaPage from './pages/CodingArenaPage';
 
 function App() {
   return (
@@ -59,6 +61,23 @@ function App() {
                 </ProtectedRoute>
               } 
             />
+            <Route 
+              path="/resume-analyzer" 
+              element={
+                <ProtectedRoute>
+                  <ResumeAnalyzerPage />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/coding-arena" 
+              element={
+                <ProtectedRoute>
+                  <CodingArenaPage />
+                </ProtectedRoute>
+              } 
+            />
+
           </Routes>
         </div>
       </AuthProvider>

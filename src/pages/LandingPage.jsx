@@ -9,10 +9,10 @@ export default function LandingPage() {
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-600/20 blur-[120px] pointer-events-none" />
 
       <nav className="w-full max-w-6xl flex justify-between items-center py-6 absolute top-0 z-10 glassmorphism px-8 mt-4 rounded-2xl">
-        <div className="flex items-center gap-2 font-display text-xl font-bold tracking-tight">
+        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold tracking-tight hover:opacity-80 transition-opacity">
           <Bot className="w-8 h-8 text-primary-500" />
           <span>InterviewAI</span>
-        </div>
+        </Link>
         <div className="flex items-center gap-4">
           <Link to="/login" className="text-slate-300 hover:text-white transition-colors font-medium">Log in</Link>
           <Link to="/signup" className="bg-primary-600 hover:bg-primary-500 text-white px-5 py-2 rounded-lg font-medium transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)]">
