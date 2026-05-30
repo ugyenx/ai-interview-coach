@@ -193,6 +193,20 @@ export default function CodingArenaPage() {
     }
   };
 
+  const handleEditorKeyDown = (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const start = e.target.selectionStart;
+      const end = e.target.selectionEnd;
+      const newCode = code.substring(0, start) + "    " + code.substring(end);
+      setCode(newCode);
+      const textarea = e.target;
+      setTimeout(() => {
+        textarea.selectionStart = textarea.selectionEnd = start + 4;
+      }, 0);
+    }
+  };
+
   const handleRunTests = async () => {
     setIsRunningTests(true);
     let engineName = 'Docker Container';
@@ -686,6 +700,7 @@ export default function CodingArenaPage() {
             <textarea 
               value={code}
               onChange={(e) => setCode(e.target.value)}
+              onKeyDown={handleEditorKeyDown}
               className="flex-1 bg-transparent font-mono text-xs text-slate-200 outline-none resize-none pt-2 pl-3 leading-relaxed focus:ring-0 overflow-y-auto"
               spellCheck={false}
             />
